@@ -20,8 +20,11 @@ function toggleTask(index) {
 }
 
 function deleteTask(index) {
-    tasks.splice(index, 1);
-    renderTasks();
+    const confirmDelete = confirm("Are you sure you want to delete this task?");
+    if (confirmDelete) {
+        tasks.splice(index, 1);
+        renderTasks();
+    }
 }
 
 function renderTasks() {
